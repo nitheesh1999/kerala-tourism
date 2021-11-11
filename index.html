@@ -257,6 +257,88 @@
       </div>
     </div>
   </footer>
+  
+  
+  <script type="text/javascript">
+    function validation(){
+      var form = document.getElementById("form");
+      var email = document.getElementById("email").value;
+      var text = document.getElementById("text");
+      var ph_no = document.getElementById("phone_number").value;
+      var text2 = document.getElementById("text2");
+      var password = document.getElementById("password").value;
+      var text2 = document.getElementById("text3");
+
+      var regexp = /^([a-zA-Z0-9\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3})?$/;
+      var regexp1 = /^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
+      var regexp2 = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[a-zA-Z!#$%&? "])[a-zA-Z0-9!#$%&?]{8,20}$/;
+
+      // for email
+
+      if(email.match(regexp)){
+          form.classList.add("valid");
+          form.classList.remove("invalid");
+          text.innerHTML = "<strong>email valid</strong>";
+          text.style.color="black";
+      }
+      else{
+          form.classList.remove("valid");
+          form.classList.add("invalid");
+          text.innerHTML = "<strong>email invalid</strong>";
+          text.style.color="red";
+      }
+      if(email == ""){
+          form.classList.add("valid");
+          form.classList.remove("invalid");
+          text.innerHTML = "";
+          text.style.color="black";
+      }
+
+      // for phonenumber
+
+      if(ph_no.match(regexp1)){
+          form.classList.add("valid");
+          form.classList.remove("invalid");
+          text1.innerHTML = "<strong>phone number valid</strong>";
+          text1.style.color="black";
+      }
+      else{
+          form.classList.remove("valid");
+          form.classList.add("invalid");
+          text2.innerHTML = "<strong>phone number invalid</strong>";
+          text2.style.color="#f54b42";
+      }
+      if(ph_no == ""){
+          form.classList.remove("valid");
+          form.classList.remove("invalid");
+          text2.innerHTML = "";
+          text2.style.color="black";
+      }
+
+      // for password
+
+      if(password.match(regexp2)){
+          form.classList.add("valid");
+          form.classList.remove("invalid");
+          text1.innerHTML = "<strong>password strong</strong>";
+          text1.style.color="black";
+      }
+      else{
+          form.classList.remove("valid");
+          form.classList.add("invalid");
+          text2.innerHTML = "<strong>password not strong</strong>";
+          text2.style.color="#f54b42";
+      }
+      if(password == ""){
+          form.classList.remove("valid");
+          form.classList.remove("invalid");
+          text2.innerHTML = "";
+          text2.style.color="black";
+      }
+
+
+  }
+  </script>
 
   <script src="js/jquery.min.js"></script>
   <script src="js/popper.min.js"></script>
