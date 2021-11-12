@@ -284,7 +284,7 @@
       var ph_no = document.getElementById("phone_number").value;
       var text2 = document.getElementById("text2");
       var password = document.getElementById("password").value;
-      var text2 = document.getElementById("text3");
+      var text3 = document.getElementById("text3");
 
       var regexp = /^([a-zA-Z0-9\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3})?$/;
       var regexp1 = /^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
@@ -316,8 +316,8 @@
       if(ph_no.match(regexp1)){
           form.classList.add("valid");
           form.classList.remove("invalid");
-          text1.innerHTML = "<strong>phone number valid</strong>";
-          text1.style.color="black";
+          text2.innerHTML = "<strong>phone number valid</strong>";
+          text2.style.color="black";
       }
       else{
           form.classList.remove("valid");
@@ -337,20 +337,20 @@
       if(password.match(regexp2)){
           form.classList.add("valid");
           form.classList.remove("invalid");
-          text1.innerHTML = "<strong>password strong</strong>";
-          text1.style.color="black";
+          text3.innerHTML = "<strong>password strong</strong>";
+          text3.style.color="black";
       }
       else{
           form.classList.remove("valid");
           form.classList.add("invalid");
-          text2.innerHTML = "<strong>password not strong</strong>";
-          text2.style.color="#f54b42";
+          text3.innerHTML = "<strong>password not strong</strong>";
+          text3.style.color="#f54b42";
       }
       if(password == ""){
           form.classList.remove("valid");
           form.classList.remove("invalid");
-          text2.innerHTML = "";
-          text2.style.color="black";
+          text3.innerHTML = "";
+          text3.style.color="black";
       }
 
 
